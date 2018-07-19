@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import Counter from "../components/Counter";
-import {decrement, increment, multiple} from "../actions";
+import {decrement, increment, multiple,incrementDelay} from "../actions";
 
 
 const mapStateToProps = (state, ownProps) =>{
@@ -14,6 +14,7 @@ const mapDispatchToProps = (dispatch, ownProps) =>{
         onIncrement:(index) => dispatch(increment(index)),
         onDecrement:(index) => dispatch(decrement(index)),
         onMultiple:(index, multipler) => dispatch(multiple(index,multipler)),
+        onIncrementDelay:(index) => setTimeout(function(){dispatch(incrementDelay(index))},1000),
     }
 }
 

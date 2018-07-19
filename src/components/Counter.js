@@ -12,9 +12,9 @@ class Counter extends Component {
         const onMultiple = this.props.onMultiple;
         onMultiple(this.props.index, multiplier)
     }
-
+    
     render() {
-        const {value, onIncrement, onDecrement, index} = this.props;
+        const {value, onIncrement, onDecrement, index,onIncrementDelay} = this.props;
         //console.log(onIncrement)
         return (
                 <p>
@@ -30,7 +30,7 @@ class Counter extends Component {
                     <button onClick={this.multiple}>
                         *
                     </button>
-                    <button>
+                    <button onClick={()=>onIncrementDelay(index)}>
                         delay +1
                     </button>
 
