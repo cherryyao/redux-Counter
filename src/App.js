@@ -1,39 +1,22 @@
-import React, { Component } from 'react';
-
+import React, {Component} from 'react';
+import CounterGroup from './components/CounterGroup'
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.textValue = React.createRef();
+    constructor(props) {
+        super(props);
 
-  }
-  setMultiplier=()=>{
-    const inputVaule = this.textValue.current.value;
-    this.props.onMultiply(inputVaule) ; 
-  }
+    }
 
-  render() {
-    const { state, onIncrement, onDecrement,onMultiply } = this.props;
-    return (
-      <div className="App">
-        <p>
-          Clicked: {state} times
-        {' '}
-          <button onClick={onIncrement}>
-            +
-          </button>
-          <button onClick={onDecrement}>
-            -
-          </button>
-          <button onClick={this.setMultiplier}>
-            *
-          </button>
-          <input type="text"  ref={this.textValue}/>
 
-        </p >
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div className="App">
+                <CounterGroup
+                    amount={2}
+                     />
+
+            </div>);
+    }
 }
 
 export default App;
